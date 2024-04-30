@@ -8,10 +8,10 @@
 * Clone this repository into your WordPress plugins directory.
 * ```cd path/to/your/wp-content/plugins/literati-example```
 Navigate to the plugin directory
-* ```make install```
-This will install the composer and npm dependencies
+* ``` npm install```
+* ```  npm run build  ```
 
-## Final Deliverable details
+## Deliverable details
 
 1.  Created a new Promotion post type that includes 4 fields:
     * Header
@@ -29,7 +29,7 @@ This will install the composer and npm dependencies
 This Plugin repo follows a structure similar to some of our custom plugins used on our various sites.
 
 ```
-/design-files   This contains any image 
+/design-files   This contains any image
 /literati-example  This is the main plugin directory
   - /blocks   This contains block specific code
   - /includes This contains plugin function
