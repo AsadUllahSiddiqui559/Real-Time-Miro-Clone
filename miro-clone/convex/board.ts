@@ -41,63 +41,64 @@ export const create = mutation({
   },
 });
 
-// export const remove = mutation({
-//   args: {
-//     id: v.id("boards"),
-//   },
-//   handler: async (ctx, args) => {
-//     const identity = await ctx.auth.getUserIdentity();
+export const remove = mutation({
+  args: {
+    id: v.id("boards"),
+  },
+  handler: async (ctx, args) => {
+    const identity = await ctx.auth.getUserIdentity();
 
-//     if (!identity) {
-//       throw new Error("Unauthorized");
-//     }
+    if (!identity) {
+      throw new Error("Unauthorized");
+    }
 
-//     const userId = identity.subject;
+    const userId = identity.subject;
 
-//     const existingFavourite = await ctx.db
-//       .query("userFavourites")
-//       .withIndex("by_user_board", (q) =>
-//         q.eq("userId", userId).eq("boardId", args.id)
-//       )
-//       .unique();
+    // const existingFavourite = await ctx.db
+      // .query("userFavourites")
+      // .withIndex("by_user_board", (q) =>
+      //   q.eq("userId", userId).eq("boardId", args.id)
+      // )
 
-//     if (existingFavourite) {
-//       await ctx.db.delete(existingFavourite._id);
-//     }
+      // .unique();
 
-//     await ctx.db.delete(args.id);
-//   },
-// });
+    // if (existingFavourite) {
+     // await ctx.db.delete(existingFavourite._id);
+    // }
 
-// export const update = mutation({
-//   args: {
-//     id: v.id("boards"),
-//     title: v.string(),
-//   },
-//   handler: async (ctx, args) => {
-//     const identity = await ctx.auth.getUserIdentity();
+    await ctx.db.delete(args.id);
+  },
+});
 
-//     if (!identity) {
-//       throw new Error("Unauthorized");
-//     }
+export const update = mutation({
+  args: {
+    id: v.id("boards"),
+    title: v.string(),
+  },
+  handler: async (ctx, args) => {
+    const identity = await ctx.auth.getUserIdentity();
 
-//     const title = args.title.trim();
+    if (!identity) {
+      throw new Error("Unauthorized");
+    }
 
-//     if (!title) {
-//       throw new Error("Title is required");
-//     }
+    const title = args.title.trim();
 
-//     if (title.length > 60) {
-//       throw new Error("Title cannot be longer than 60 characters");
-//     }
+    if (!title) {
+      throw new Error("Title is required");
+    }
 
-//     const board = await ctx.db.patch(args.id, {
-//       title: args.title,
-//     });
+    if (title.length > 60) {
+      throw new Error("Title cannot be longer than 60 characters");
+    }
 
-//     return board;
-//   },
-// });
+    const board = await ctx.db.patch(args.id, {
+      title: args.title,
+    });
+
+    return board;
+  },
+});
 
 // export const favourite = mutation({
 //   args: { id: v.id("boards"), orgId: v.string() },

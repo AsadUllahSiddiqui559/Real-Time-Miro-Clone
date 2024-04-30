@@ -13,7 +13,7 @@ import Link from "next/link";
 import { toast } from "sonner";
 import { Footer } from "./footer";
 import { Overlay } from "./overlay";
-import { Actions } from "../action";
+import { Actions } from "../../../../components/action";
 
 interface BoardCardProps {
   id: string;
