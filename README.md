@@ -25,8 +25,7 @@ Navigate to the plugin directory
     * The carousel has auto transition between the attached promotions on the defined timer
 
 
-## Repo Setup
-This Plugin repo follows a structure similar to some of our custom plugins used on our various sites.
+## Repo structure
 
 ```
 /design-files   This contains any image
