@@ -5,32 +5,31 @@
 * [WordPress 6.4+](https://wordpress.org/download/releases/)
 
 ## Installation
+* Clone this repository into your WordPress plugins directory.
+* ```cd path/to/your/wp-content/plugins/literati-example```
+Navigate to the plugin directory
+* ```make install```
+This will install the composer and npm dependencies
 
+## Final Deliverable details
 
-
-
-## Final Deliverable
-Using the boilerplate provided, create an operational plugin along with any applicable tests that does the following:
-
-1.  Creates a new Promotion post type that includes 4 fields:
+1.  Created a new Promotion post type that includes 4 fields:
     * Header
     * Text
     * Button
     * Image
 
-2.  Implements a Carousel Gutenberg block using the [Figma design here](https://www.figma.com/proto/cb6J47VWG0OiNHgHYrFfYJ/Literati-Example-Carousel?page-id=0%3A1&type=design&node-id=1-2&viewport=1037%2C847%2C1&t=6HoJEb2wYGRRrobI-8&scaling=scale-down&starting-point-node-id=1%3A2&device-frame=0&hotspot-hints=0&disable-default-keyboard-nav=1&hide-ui=1) (or use the .fig file in the design-files directory) with the following:
-    * The block should have a field to define the transition timer (how many seconds between moving to the next item)
-    * The carousel should display published Promotion content types
-    * The carousel should auto transition between the attached promotions on the defined timer
+2.  Implemented a Carousel Gutenberg block
+    * The block has a field to define the transition timer (how many seconds between moving to the next item)
+    * The carousel has display published Promotion content types
+    * The carousel has auto transition between the attached promotions on the defined timer
 
-
-![image info](./design-files/literati_example_carousel.jpg)
 
 ## Repo Setup
 This Plugin repo follows a structure similar to some of our custom plugins used on our various sites.
 
 ```
-/design-files   This contains any image references you can use in your development
+/design-files   This contains any image 
 /literati-example  This is the main plugin directory
   - /blocks   This contains block specific code
   - /includes This contains plugin function
